@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ super() }} - Careers{% endblock %}
+{% block main %}
+    <h4 class="careers"><h1>Career Opportunities</h1></h4>
+<div>
+    <table class="table table-striped">
+        <h3>Join our Team!!!</h3>
+    <thead>
+        <tr>
+            {% for header in table_header %}
+                 <th><span>{{ header }}</span>
+                </td>
+            {% endfor %}
+        </tr>
+    </thead>
+        <tbody>
+          {% for data in table_data %}
+        <tr >
+            <td data-label="Job Position">{{ data[0] }}</td>
+            <td><a class="btn btn-link" style="color: black" href="{{ data[1] }}"><u>More info ?<span style="color: red"> Click</span></u></a>
+         <td data-label="Campus">{{ data[2] }}</td>
+        </tr>
+       {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
